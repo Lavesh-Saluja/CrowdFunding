@@ -4,11 +4,16 @@ import themes from './themes'
 import styled, {ThemeProvider, createGlobalStyle} from 'styled-components'
 import {useState,createContext} from 'react'
 
+
+ const App= createContext()
 function Format({children}) {
+
+
 const [theme,setTheme]= useState('defaultTheme')
 
 
   return (
+    <App.Provider>
 <ThemeProvider theme={themes[theme]}>
 <FormatWrapper >
 <GlobalStyle/>
@@ -21,6 +26,7 @@ const [theme,setTheme]= useState('defaultTheme')
     </div>
     </FormatWrapper>
     </ThemeProvider>
+    </App.Provider>
   )
 }
 
@@ -29,6 +35,7 @@ body{
 
   margin:0;
   padding:0;
+  overflow-x:hidden;
 }
 `
 
@@ -38,6 +45,7 @@ min-height:100vh;
 background-color: ${(props)=>props.theme.bgColor};
 background-image:${(props)=>props.theme.bgImg};
 color: ${(props)=>props.theme.color};
+
 
 
 `
