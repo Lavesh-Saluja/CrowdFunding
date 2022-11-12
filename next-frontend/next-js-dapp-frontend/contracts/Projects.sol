@@ -18,7 +18,10 @@ contract ProjectFactory{
  );
 
 
-function createProject(string memory _title, uint _requiredAmount, string memory _imgUri, string memory _ideaUri, string memory _category ) public{
+function createProject(
+string memory _title, 
+uint _requiredAmount, string memory imgUri, 
+string memory _ideaUri, string memory _category ) public{
 
     Project newProject = new Project(_title,_requiredAmount, _imgUri , _ideaUri);
     deployedProjects.push(address(newProject));

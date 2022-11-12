@@ -7,7 +7,6 @@ import  React,{useState} from 'react';
 
 
   const Forms=()=>{
-    const dispatch = useNotification();
     const [title,setTitle]=useState("") ;
     const [maxfund,setMaxfund]=useState(0) ;
     const [category,setCategory]=useState("") ;
@@ -66,27 +65,7 @@ import  React,{useState} from 'react';
           onSubmit={createContract}
           title="Details of Organization"
       />
-<SendTransaction 
-    chainId= '0x5'
-    contractOptions= {{
-        abi: contractData['abi'],
-        contractAddress: contractData['contract_Address'],
-        functionName: 'createProject',
-        params: {
-            title:{title},
-            requiredAmount: {maxfund},
-            imgUri:"",
-            ideaUri:{description},
-            category:{category},
-        },
-        msgValue: 1000000000000000000,
-    }}
-    buttonConfig= {{
-        text: 'Create Organization',
-        theme: 'primary',
-    }}
-     notificationConfig={{ dispatch }}
-/>
+
     </>);
   }
   export default Forms
