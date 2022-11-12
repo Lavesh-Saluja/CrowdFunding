@@ -1,8 +1,8 @@
 // import { MoralisProvider } from "react-moralis"
 // import { ConnectButton,NotificationProvider} from "web3uikit";
 import React,{useState} from "react";
-import Forms from "../components/Forms/Forms.jsx"
-import Tables from "../components/Format/Tables.jsx"
+// import Forms from "../components/Forms/Forms.jsx"
+// import Tables from "../components/Format/Tables.jsx"
 // import Header from "../components/Format/Header.jsx";
 export default function Home() {
   // string title,

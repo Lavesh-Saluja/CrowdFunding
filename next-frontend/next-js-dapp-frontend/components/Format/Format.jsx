@@ -1,22 +1,24 @@
-import React,{useState,createContext} from 'react'
+import React from 'react'
 import Header from './Header'
 import themes from './themes'
-import styled, {ThemeProvider, createGlobalStyle} from 'styled-components';
+import styled, {ThemeProvider, createGlobalStyle} from 'styled-components'
+import {useState,createContext} from 'react'
+import {ToastCointainer }from 'react-toastify'
+// import  'react-toastify/dist/react-toastify'
 
 
  const App= createContext()
 function Format({children}) {
 
 
-const [theme,setTheme]= useState('light')
-const changeTheme =()=> {
-  setTheme(theme=="light"?"dark":"light");
-}
+const [theme,setTheme]= useState('defaultTheme')
+
 
   return (
-    <App.Provider>
+    <App.Provider value={theme} >
 <ThemeProvider theme={themes[theme]}>
-<FormatWrapper onClick={changeTheme}>
+<ToastCointainer/>
+<FormatWrapper >
 <GlobalStyle/>
     <div>
     <Header/>
@@ -52,3 +54,4 @@ color: ${(props)=>props.theme.color};
 `
 
 export default Format
+export{App}

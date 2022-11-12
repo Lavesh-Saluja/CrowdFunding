@@ -5,13 +5,13 @@ import { useContext } from "react";
 import Wallet from "./Wallet";
 import { Router } from "next/router";
 import Link from "next/link";
-import ResponsiveAppBar from "./Navbar";
+// import ResponsiveAppBar from "./Navbar";
 
 export default function Header() {
   return (
     <>
       <HeaderWrapper>
-        {/* <h1>CrowdFunding</h1>
+        <h1>CrowdFunding</h1>
         <Wallet />
         <Link href={"/"}>
           <NavigationLinks active={Router.pathname == "/" ? true : false}>
@@ -31,9 +31,9 @@ export default function Header() {
           >
             Dashboard
           </NavigationLinks>
-        </Link> */}
+        </Link>
 
-        <ResponsiveAppBar />
+        {/* <ResponsiveAppBar /> */}
       </HeaderWrapper>
     </>
   );
