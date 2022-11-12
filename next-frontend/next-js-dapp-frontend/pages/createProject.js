@@ -1,8 +1,11 @@
 import React from 'react'
-
+import Forms from '../components/Forms/Forms'
 function createProject() {
   return (
-    <div>createProject</div>
+    <div>
+    createProject
+    <Forms/>
+    </div>
   )
 }
 

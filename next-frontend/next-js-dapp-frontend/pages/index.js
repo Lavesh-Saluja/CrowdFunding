@@ -1,8 +1,9 @@
-import { MoralisProvider } from "react-moralis"
-import { ConnectButton,NotificationProvider} from "web3uikit";
+// import { MoralisProvider } from "react-moralis"
+// import { ConnectButton,NotificationProvider} from "web3uikit";
 import React,{useState} from "react";
-import Forms from "../components/Format/Forms.jsx"
+import Forms from "../components/Forms/Forms.jsx"
 import Tables from "../components/Format/Tables.jsx"
+// import Header from "../components/Format/Header.jsx";
 export default function Home() {
   // string title,
   // uint requiredAmount,
@@ -29,13 +30,15 @@ const [title,setTitle]=useState();
             <div className="w-[100vw] h-[10vh] bg-blue-600">
               <h1 className="text-white">CROWD FUNDING</h1>
             </div>
-              <MoralisProvider initializeOnMount={false}>
+              {/* <MoralisProvider initializeOnMount={false}>
               <ConnectButton />
+               */}
+              {/* <NotificationProvider> */}
               
-              <NotificationProvider>
-              <Forms />
-              </NotificationProvider>
-              </MoralisProvider> 
+             <div>this is home</div>
+
+              {/* </NotificationProvider>
+              </MoralisProvider>  */}
                 <h1>{title}</h1>
                 {/* <Tables /> */}
                 
