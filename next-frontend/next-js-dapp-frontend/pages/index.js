@@ -30,6 +30,7 @@ const [title,setTitle]=useState();
             <div className="w-[100vw] h-[10vh] bg-blue-600">
               <h1 className="text-white">CROWD FUNDING</h1>
             </div>
+
               {/* <MoralisProvider initializeOnMount={false}>
               <ConnectButton />
                */}
@@ -38,7 +39,7 @@ const [title,setTitle]=useState();
              <div>this is home</div>
 
               {/* </NotificationProvider>
-              </MoralisProvider>  */}
+              </MoralisProvider> 
                 <h1>{title}</h1>
                 {/* <Tables /> */}
                 

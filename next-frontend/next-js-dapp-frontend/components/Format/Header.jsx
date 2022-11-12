@@ -5,23 +5,24 @@ import { useContext } from "react";
 import Wallet from "./Wallet";
 import { Router } from "next/router";
 import Link from "next/link";
+import ResponsiveAppBar from "./Navbar";
 
 export default function Header() {
   return (
     <>
       <HeaderWrapper>
+        {/* <h1>CrowdFunding</h1>
         <Wallet />
-        Header
         <Link href={"/"}>
           <NavigationLinks active={Router.pathname == "/" ? true : false}>
-            link1
+            Organization
           </NavigationLinks>
         </Link>
         <Link href={"/createProject"}>
           <NavigationLinks
             active={Router.pathname == "/createProject" ? true : false}
           >
-            Create Pitch
+            Create Organization
           </NavigationLinks>
         </Link>
         <Link href={"/dashboard"}>
@@ -30,22 +31,19 @@ export default function Header() {
           >
             Dashboard
           </NavigationLinks>
-        </Link>
+        </Link> */}
+
+        <ResponsiveAppBar />
       </HeaderWrapper>
     </>
   );
 }
 
 const HeaderWrapper = styled.div`
-  width: 100%;
-  height: 2rem;
-  border: 2px solid white;
-  background-color: violet;
-  display: flex;
-  justify-content: space-between;
-`;
+  
+ `;
 
 const NavigationLinks = styled.div`
-  background-color: black;
-  color: white;
+  
 `;
+

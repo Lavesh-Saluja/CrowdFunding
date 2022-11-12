@@ -1,21 +1,22 @@
-import React from 'react'
+import React,{useState,createContext} from 'react'
 import Header from './Header'
 import themes from './themes'
-import styled, {ThemeProvider, createGlobalStyle} from 'styled-components'
-import {useState,createContext} from 'react'
+import styled, {ThemeProvider, createGlobalStyle} from 'styled-components';
 
 
  const App= createContext()
 function Format({children}) {
 
 
-const [theme,setTheme]= useState('defaultTheme')
-
+const [theme,setTheme]= useState('light')
+const changeTheme =()=> {
+  setTheme(theme=="light"?"dark":"light");
+}
 
   return (
     <App.Provider>
 <ThemeProvider theme={themes[theme]}>
-<FormatWrapper >
+<FormatWrapper onClick={changeTheme}>
 <GlobalStyle/>
     <div>
     <Header/>
