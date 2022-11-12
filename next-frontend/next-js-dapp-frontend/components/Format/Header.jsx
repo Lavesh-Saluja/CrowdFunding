@@ -14,20 +14,20 @@ export default function Header() {
         <h1>CrowdFunding</h1>
         <Wallet />
         <Link href={"/"}>
-          <NavigationLinks active={Router.pathname == "/" ? true : false}>
+          <NavigationLinks active={Router.pathname === "/" ? true : false}>
             Organization
           </NavigationLinks>
         </Link>
         <Link href={"/createProject"}>
           <NavigationLinks
-            active={Router.pathname == "/createProject" ? true : false}
+            active={Router.pathname === "/createProject" ? true : false}
           >
             Create Organization
           </NavigationLinks>
         </Link>
         <Link href={"/dashboard"}>
           <NavigationLinks
-            active={Router.pathname == "/dashboard" ? true : false}
+            active={Router.pathname === "/dashboard" ? true : false}
           >
             Dashboard
           </NavigationLinks>
@@ -40,10 +40,11 @@ export default function Header() {
 }
 
 const HeaderWrapper = styled.div`
-  
+  margin:0px;
  `;
 
 const NavigationLinks = styled.div`
+margin:0px;
   
 `;
 

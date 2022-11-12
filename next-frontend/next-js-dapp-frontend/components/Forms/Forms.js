@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import token from '../../utils/variables';
 import { isAddress } from 'ethers/lib/utils';
 import { ethers } from 'ethers';
+import ProjectFactory from "../../artifacts/contracts/Projects.sol/ProjectFactory.json"
 
 
 
@@ -111,6 +112,52 @@ console.log("out")
 }
 
 
+const createContract = async(e)=>{
+
+e.preventDefault()
+const provider= new ethers.providers.Web3Provider(window.ethereum)
+const signer = provider.getSigner()
+
+if(form.projectTitle==''){
+  console.log("title is empty");
+
+}else if(form.projectDescription==''){
+  console.log("description is empty");
+
+}else if(form.requiredAmount==''){
+  console.log("amount is empty");
+
+}else if(uploaded == false){
+  console.log("upload required");
+
+}else{
+  setLoading(true)
+}
+
+
+const contract = new ethers.Contract(
+  process.env.CONTRACT_PUBLIC_ADDRESS,
+  ProjectFactory.abi,
+  signer
+
+)
+
+console.log ("Starting a new campaign.......")
+const ProjectData = await contract.createProject(
+  form.projectTitle,
+  parseInt(form.requiredAmount),
+  image,
+  form.projectDescription,
+  form.category,
+
+)
+ 
+await ProjectData.wait()
+
+setAddress(ProjectData.to)
+
+}
+
 
 
   
@@ -165,76 +212,14 @@ setForm({
      uploaded==false?<button onClick={uploadFiles}>Upload files to ipfs</button>:<button>Files Uploaded to ipfs  </button>
     }
 
-    <button>Start Fund Raising</button>
+    <button onClick={createContract}>Start Fund Raising</button>
     </div>}
 
 
 
 
 
-      {/* <Form className="bg-black "
-        buttonConfig={{
-          // onClick: function createContract(){},
-          theme: 'primary'
-        }}
-        data={[
-          {
-            inputWidth: '50%',
-            name: 'Title of Organization',
-            type: 'text',
-            value: ''
-          },
-          {
-            inputWidth: '50%',
-            name: 'Required Fund For Organization',
-            type: 'tel',
-            value: ''
-          },
-          {
-            inputWidth: '50%',
-            name: 'Category of Organization',
-            type: 'text',
-            value: ''
-          },
-          {
-            inputWidth: '50%',
-            name: 'Description Of Organization',
-            type: 'textarea',
-            value: ''
-          },
-          {
-            inputWidth: '50%',
-            name: 'Image',
-            type: 'file',
-            
-            accept:"img/*"
-
-          },
-      ]}
-          // onSubmit={createContract}
-          // title="Details of Organization"
-      />
-{/* <SendTransaction 
-    chainId= '0x5'
-    contractOptions= {{
-        abi: contractData['abi'],
-        contractAddress: contractData['contract_Address'],
-        functionName: 'createProject',
-        params: {
-            title:{title},
-            requiredAmount: {maxfund},
-            imgUri:"",
-            ideaUri:{description},
-            category:{category},
-        },
-        msgValue: 1000000000000000000,
-    }}
-    buttonConfig= {{
-        text: 'Create Organization',
-        theme: 'primary',
-    }}
-     notificationConfig={{ dispatch }} */}
-{/* /> */} 
+     
     </>
     </FormsLayout.Provider>);
   }
