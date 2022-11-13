@@ -41,7 +41,7 @@ export default function Header() {
   );
 }
 
-const HeaderWrapper = styled.div `
+const HeaderWrapper = styled.div`
   margin:0px;
  `;
 
