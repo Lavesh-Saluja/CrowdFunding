@@ -1,14 +1,8 @@
 
 import React,{useState} from "react";
-<<<<<<< HEAD
 import Image from "next/image";
 import ProjectFactory from "../artifacts/contracts/Projects.sol/ProjectFactory.json"
 
-=======
-// import Forms from "../components/Forms/Forms.jsx"
-// import Tables from "../components/Format/Tables.jsx"
-// import Header from "../components/Format/Header.jsx";
->>>>>>> 8e6f89a80e1b8e9b937aa4000af6d045480ee991
 export default function Home() {
   
 
@@ -17,7 +11,6 @@ export default function Home() {
 
 
   return (
-<<<<<<< HEAD
    <>
 
 <div className="card" style={{height:"40%", width:"40%"}}>
@@ -42,27 +35,6 @@ amount
 
    </>
             
-=======
-   
-            <div className="flex">
-            <div className="w-[100vw] h-[10vh] bg-blue-600">
-              <h1 className="text-white">CROWD FUNDING</h1>
-            </div>
-
-              {/* <MoralisProvider initializeOnMount={false}>
-              <ConnectButton />
-               */}
-              {/* <NotificationProvider> */}
-              
-             <div>this is home</div>
-
-              {/* </NotificationProvider>
-              </MoralisProvider> 
-                <h1>{title}</h1>
-                {/* <Tables /> */}
-                
-            </div>
->>>>>>> 8e6f89a80e1b8e9b937aa4000af6d045480ee991
   )
 }
 
