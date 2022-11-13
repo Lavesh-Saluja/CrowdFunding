@@ -5,47 +5,48 @@ import { useContext } from "react";
 import Wallet from "./Wallet";
 import { Router } from "next/router";
 import Link from "next/link";
+// import ResponsiveAppBar from "./Navbar";
+// https://www.taylorintime.com/wp-content/uploads/2021/06/lightbulb-1080x675.jpg
+// 
 
 export default function Header() {
   return (
     <>
       <HeaderWrapper>
+        <h1>CrowdFunding</h1>
         <Wallet />
-        Header
         <Link href={"/"}>
-          <NavigationLinks active={Router.pathname == "/" ? true : false}>
-            link1
+          <NavigationLinks active={Router.pathname === "/" ? true : false}>
+            Organization
           </NavigationLinks>
         </Link>
         <Link href={"/createProject"}>
           <NavigationLinks
-            active={Router.pathname == "/createProject" ? true : false}
+            active={Router.pathname === "/createProject" ? true : false}
           >
-            Create Pitch
+            Create Organization
           </NavigationLinks>
         </Link>
         <Link href={"/dashboard"}>
           <NavigationLinks
-            active={Router.pathname == "/dashboard" ? true : false}
+            active={Router.pathname === "/dashboard" ? true : false}
           >
             Dashboard
           </NavigationLinks>
         </Link>
+
+        {/* <ResponsiveAppBar /> */}
       </HeaderWrapper>
     </>
   );
 }
 
-const HeaderWrapper = styled.div`
-  width: 100%;
-  height: 2rem;
-  border: 2px solid white;
-  background-color: violet;
-  display: flex;
-  justify-content: space-between;
-`;
+const HeaderWrapper = styled.div `
+  margin:0px;
+ `;
 
 const NavigationLinks = styled.div`
-  background-color: black;
-  color: white;
+margin:0px;
+  
 `;
+

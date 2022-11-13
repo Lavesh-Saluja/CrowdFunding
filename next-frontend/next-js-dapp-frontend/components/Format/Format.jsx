@@ -3,6 +3,8 @@ import Header from './Header'
 import themes from './themes'
 import styled, {ThemeProvider, createGlobalStyle} from 'styled-components'
 import {useState,createContext} from 'react'
+import {ToastCointainer }from 'react-toastify'
+// import  'react-toastify/dist/react-toastify'
 
 
  const App= createContext()
@@ -13,8 +15,9 @@ const [theme,setTheme]= useState('defaultTheme')
 
 
   return (
-    <App.Provider>
+    <App.Provider value={theme} >
 <ThemeProvider theme={themes[theme]}>
+<ToastCointainer/>
 <FormatWrapper >
 <GlobalStyle/>
     <div>
@@ -45,9 +48,7 @@ min-height:100vh;
 background-color: ${(props)=>props.theme.bgColor};
 background-image:${(props)=>props.theme.bgImg};
 color: ${(props)=>props.theme.color};
-
-
-
 `
 
 export default Format
+export{App}
